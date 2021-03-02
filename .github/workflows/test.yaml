@@ -18,6 +18,11 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2.3.4
       - name: unit-tests
-        run: make tests_run
+        run: make tests_run > output.txt
       - name: coverage
-        run: make coverage
+        run: make coverage > output.txt
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: my_artifact
+          path: output.txt
