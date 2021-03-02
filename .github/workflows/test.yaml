@@ -11,6 +11,7 @@ jobs:
       - name: Say hello world
         run: echo Welcome to the Github Actions workshop !
   unit-test:
+    runs-on: ubuntu-20.04
     container:
       image: epitechcontent/epitest-docker
     steps:
