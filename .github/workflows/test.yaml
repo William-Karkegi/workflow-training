@@ -33,9 +33,9 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2.3.4
-      - name: build
+      - name: make
         run: make
-      - name: unit-tests
+      - name: functional-test
         run: ./functional-test.sh 5 + 1 > output.txt
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2
