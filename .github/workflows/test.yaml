@@ -11,10 +11,12 @@ jobs:
       - name: Say hello world
         run: echo Welcome to the Github Actions workshop !
   unit-test:
-    container: epitechcontent/epitest-docker
-    - name: checkout
-      uses: actions/checkout@v2.3.4
-    - name: unit-tests
-      run: make tests_run
-    - name: coverage
-      run: make coverage
+    container:
+      image: epitechcontent/epitest-docker
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2.3.4
+      - name: unit-tests
+        run: make tests_run
+      - name: coverage
+        run: make coverage
