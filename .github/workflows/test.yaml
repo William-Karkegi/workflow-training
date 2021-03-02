@@ -36,7 +36,7 @@ jobs:
       - name: build
         run: make
       - name: unit-tests
-        run: ./functional-test.sh > output.txt
+        run: ./functional-test.sh 5 + 1 > output.txt
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2
         with:
